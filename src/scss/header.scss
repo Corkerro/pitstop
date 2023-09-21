@@ -633,7 +633,7 @@
     width: toRem(30);
     height: toRem(18);
     cursor: pointer;
-    z-index: 5;
+    z-index: 12;
     span,
     &::before,
     &::after {
@@ -690,7 +690,7 @@
   // .burger__icon
 
   &__icon {
-    z-index: 11;
+    z-index: 14;
   }
 
   // .burger__body

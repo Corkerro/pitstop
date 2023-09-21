@@ -815,7 +815,7 @@ h6 {
 }
 
 .burger__icon {
-  z-index: 11;
+  z-index: 14;
 }
 
 .burger__body {
@@ -1080,7 +1080,7 @@ h6 {
     width: 1.875rem;
     height: 1.125rem;
     cursor: pointer;
-    z-index: 5;
+    z-index: 12;
   }
 
   .icon-burger span,
