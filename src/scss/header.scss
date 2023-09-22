@@ -1,7 +1,4 @@
 //====================================================================================================
-.main {
-  height: 400vh;
-}
 .header {
   // .header__container
   padding-top: toRem(10);
@@ -9,6 +6,7 @@
   width: 100%;
   background: #fff;
   z-index: 10;
+  padding-bottom: toRem(10);
   &__container {
   }
 
@@ -118,7 +116,7 @@
             fill: #e41f17;
           }
         }
-        & div {
+        & div.icon {
           position: relative;
           width: 24px;
           height: 24px;
@@ -336,7 +334,7 @@
     height: 100vh;
     position: absolute;
     background: #fff;
-    top: -100vh;
+    top: -120vh;
     left: 0;
     padding-top: 15px;
     transition: top 0.5s ease;
@@ -346,16 +344,16 @@
   &__content {
     @media (max-width: em(1080)) {
       position: absolute;
-      height: calc(100vh - 74px);
-      top: 0;
-      align-items: start;
+      height: 100vh;
+      bottom: 0;
       padding-top: toRem(90);
       width: 100%;
     }
-    height: calc(100vh - 215px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @media (max-height: em(650)) {
+      top: 0;
+      overflow-y: scroll;
+    }
+
     max-width: calc(toRem(1336) + 30px);
     margin: 0 auto;
     & a.button__contained-medium {
@@ -376,6 +374,10 @@
   // .menu__list
 
   &__list {
+    margin-top: toRem(90);
+    @media (max-width: em(1080)) {
+      margin-top: 0;
+    }
     @media (max-width: em(1020)) {
       width: 100%;
     }
@@ -508,6 +510,11 @@
 
   &__footer {
     position: absolute;
+    @media (max-height: em(630)) {
+      position: relative;
+      margin-top: max(15vh, 50px);
+      padding: 0;
+    }
     bottom: 30px;
     width: 100%;
     display: flex;
