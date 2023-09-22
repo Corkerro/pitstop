@@ -1,5 +1,8 @@
 .main {
   margin-top: toRem(184);
+  @media (max-width: em(860)) {
+    margin-top: toRem(140);
+  }
   margin-bottom: toRem(10000);
   // .main__container
 
@@ -11,6 +14,12 @@
   &__content {
     height: toRem(656);
     height: calc(100vh - toRem(200));
+    @media (max-width: em(1080)) {
+      height: calc(100vh - toRem(280));
+    }
+    @media (max-width: em(860)) {
+      height: calc(100vh - toRem(230));
+    }
     @media (max-width: em(660)) {
       max-height: 560px;
     }
@@ -68,6 +77,12 @@
     pointer-events: none;
     position: absolute;
     height: calc(100vh - toRem(200));
+    @media (max-width: em(1080)) {
+      height: calc(100vh - toRem(280));
+    }
+    @media (max-width: em(860)) {
+      height: calc(100vh - toRem(230));
+    }
     @media (max-width: em(660)) {
       max-height: 560px;
     }
@@ -79,6 +94,12 @@
     z-index: 0;
     & .bg {
       height: calc(100vh - toRem(200));
+      @media (max-width: em(1080)) {
+        height: calc(100vh - toRem(280));
+      }
+      @media (max-width: em(860)) {
+        height: calc(100vh - toRem(230));
+      }
       @media (max-width: em(660)) {
         max-height: 560px;
       }
@@ -139,6 +160,9 @@
             bottom: 50%;
             left: 0;
             rotate: -35deg;
+          }
+          @media (max-width: em(420)) {
+            left: 100px;
           }
           & img {
             &.car {

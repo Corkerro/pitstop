@@ -59,7 +59,6 @@
       @media (max-width: em(860)) {
         flex-direction: column;
         margin-top: toRem(20);
-        justify-content: space-between;
         margin-top: max(10vh, 20px);
         gap: 24px;
         max-height: 300px;
@@ -240,12 +239,68 @@
     justify-content: space-between;
     background: var(--main-white, #fff);
     box-shadow: 0px -6px 30px 0px rgba(0, 7, 47, 0.14);
-    bottom: 0;
+    bottom: -80px;
+    transition: bottom 0.3s ease;
+    &._active {
+      bottom: 0;
+    }
+    height: toRem(80);
     @include adaptiveValue('font-size', 16, 12, 1080, 320, 1);
     font-style: normal;
     font-weight: 400;
     line-height: 130%; /* 15.6px */
     letter-spacing: 0.24px;
+    &._active {
+      & .header__footer_button {
+        & span {
+          &::before {
+            rotate: 45deg;
+          }
+          &::after {
+            rotate: -45deg;
+          }
+        }
+      }
+    }
+    &_button {
+      position: absolute;
+      top: -32px;
+      left: 0;
+      width: 100%;
+      height: 32px;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & span {
+        display: block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        background: #e41f17;
+        border-radius: 50%;
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          background: #fff;
+          width: 50%;
+          height: 2px;
+          rotate: -45deg;
+          top: calc(50% - 2px / 2);
+          transition: rotate 0.3s ease;
+        }
+        &::before {
+          left: 2px;
+        }
+        &::after {
+          rotate: 45deg;
+          right: 2px;
+        }
+      }
+    }
     & li {
       display: flex;
       flex-direction: column;

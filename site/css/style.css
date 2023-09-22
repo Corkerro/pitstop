@@ -552,12 +552,78 @@ h6 {
   background: var(--main-white, #fff);
   -webkit-box-shadow: 0px -6px 30px 0px rgba(0, 7, 47, 0.14);
           box-shadow: 0px -6px 30px 0px rgba(0, 7, 47, 0.14);
-  bottom: 0;
+  bottom: -80px;
+  -webkit-transition: bottom 0.3s ease;
+  transition: bottom 0.3s ease;
+  height: 5rem;
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
   /* 15.6px */
   letter-spacing: 0.24px;
+}
+
+.header__footer._active {
+  bottom: 0;
+}
+
+.header__footer._active .header__footer_button span::before {
+  rotate: 45deg;
+}
+
+.header__footer._active .header__footer_button span::after {
+  rotate: -45deg;
+}
+
+.header__footer_button {
+  position: absolute;
+  top: -32px;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__footer_button span {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: #e41f17;
+  border-radius: 50%;
+}
+
+.header__footer_button span::before,
+.header__footer_button span::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 50%;
+  height: 2px;
+  rotate: -45deg;
+  top: calc(50% - 1px);
+  -webkit-transition: rotate 0.3s ease;
+  transition: rotate 0.3s ease;
+}
+
+.header__footer_button span::before {
+  left: 2px;
+}
+
+.header__footer_button span::after {
+  rotate: 45deg;
+  right: 2px;
 }
 
 .header__footer li {
@@ -1195,6 +1261,18 @@ h6 {
   .menu__list {
     margin-top: 0;
   }
+
+  .main__content {
+    height: calc(100vh - 17.5rem);
+  }
+
+  .main__bg {
+    height: calc(100vh - 17.5rem);
+  }
+
+  .main__bg .bg {
+    height: calc(100vh - 17.5rem);
+  }
 }
 
 @media (max-width: 63.75em) {
@@ -1326,9 +1404,6 @@ h6 {
         -ms-flex-direction: column;
             flex-direction: column;
     margin-top: 1.25rem;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     margin-top: max(10vh, 20px);
     gap: 24px;
     max-height: 300px;
@@ -1425,6 +1500,22 @@ h6 {
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
   }
+
+  .main {
+    margin-top: 8.75rem;
+  }
+
+  .main__content {
+    height: calc(100vh - 14.375rem);
+  }
+
+  .main__bg {
+    height: calc(100vh - 14.375rem);
+  }
+
+  .main__bg .bg {
+    height: calc(100vh - 14.375rem);
+  }
 }
 
 @media (max-width: 44.375em) {
@@ -1494,6 +1585,12 @@ h6 {
 
   .main__bg div.composition div.persons {
     display: none;
+  }
+}
+
+@media (max-width: 26.25em) {
+  .main__bg div.composition div.car {
+    left: 100px;
   }
 }
 
